@@ -1,5 +1,14 @@
-print("Hellow")
+from flask import Flask
+from flask import render_template
 
-print("Hej Tór")
+app = Flask(__name__)
 
-print("htse")
+@app.route("/")
+def home():
+    return render_template('landing_page.html')
+
+
+
+if __name__ == "__main__":
+    app.run()
+
