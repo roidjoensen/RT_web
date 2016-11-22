@@ -20,7 +20,6 @@
     <!-- Custom Fonts -->
     <link href="../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
  
-    
 </head>
 
 <body>
@@ -29,6 +28,7 @@
 
     <!-- Header -->
     <header id="top" class="header">
+        <canvas id="myCanvas"></canvas>
         <div class="text-vertical-center">
             <h1>Vitin</h1>
             <h3>Showing you the Way</h3>
@@ -230,9 +230,18 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../static/js/bootstrap.min.js"></script>
-
-   
-
+    
+  <script src="https://npmcdn.com/particlesjs@1.0.1/dist/particles.min.js"></script>
+    <script>
+      window.onload = function() {
+        Particles.init({
+          selector: '#myCanvas',
+          color: '#ffffff',
+          connectParticles: true,
+          minDistance: 200
+        });
+      };
+    </script>
 </body>
 
 </html>
