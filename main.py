@@ -35,7 +35,7 @@ def do_admin_login():
     result = query.first()
     if result:
         session['logged_in'] = True
-        return home()
+        return secret()
     else:
         flash('wrong password!')
         return render_template('login.html')
@@ -69,6 +69,13 @@ def do_admin_signup():
 def logout():
     session['logged_in'] = False
     return home()
+
+
+@app.route("/secret")
+def secret():
+    if session['logged_in']:
+        return "Hello Boss!  <a href='/logout'>Logout</a>"
+    return "Go Fuck yourself!  <a href='/home'>HOME</a>"
 
 
 
